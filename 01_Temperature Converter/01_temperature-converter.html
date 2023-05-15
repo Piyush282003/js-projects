@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body{
+            text-align: center;
+            margin-top: 100px;
+            background-color: blanchedalmond;
+        }
+        h1{
+            text-align: center;
+            font-size: 5rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #container{
+            background-color: #1abc9c;
+            border: 1px solid black;
+            padding: 80px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            width: 60%;
+            margin-left: 14%;
+        }
+        .inp{
+            padding: 5px 10px;
+            margin: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 2px 4px 10px 2px black;
+        }
+
+        .input-div label{
+            font-size: 40px;
+        }
+
+        h3{
+            margin-top: 100px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+
+    <div id="container">
+        <div class="input-div">
+            <label for="cel">Celsius</label><br>
+            <!-- <input type="number" value="0" id="cel" class="inp"> -->
+            <input type="number" placeholder="0" id="cel" class="inp">
+            <!-- value se vo default aayega browser khollte hi... -->
+        </div>
+        <div class="input-div">
+            <label for="fah">Fahrenheit</label><br>
+            <!-- <input type="number" value="32" id="fah" class="inp"> -->
+            <input type="number" placeholder="32" id="fah" class="inp">
+        </div>
+    </div>
+
+    <marquee behavior="" direction="left">
+        <h3>I hope u like it..</h3>
+    </marquee>
+
+<!-- hum dekh rhe h ki agr hum google r tem cinverter pr change krte h cel me toh vo 0 automatically remove ho rha hai...toh yeh js se hoga.. -->
+
+<!-- addEventListener ki jgh hum oninput upr input ke andr bhi likh skte hai... -->
+    <script>
+        var cel = document.getElementById("cel")
+        var fah = document.getElementById("fah")
+
+        cel.addEventListener("input",function(){
+            let c = this.value;                              //this here mtlb cel hai...
+            let f = (c * 9/5) +32;
+            if(!Number.isInteger(f)){                                  //aise decimal bhut idkha rha hai toh use kum krne ke liye hum yeh kr rhe hai...and Number.isInteger(var) se true false aata h...
+                f = f.toFixed(4);
+            }
+            fah.value = f;
+        })
+        fah.addEventListener("input",function(){
+            let f = this.value;
+            let c = (f - 32) * 5/9;
+            if(!Number.isInteger(c)){                                  //aise decimal bhut idkha rha hai toh use kum krne ke liye hum yeh kr rhe hai...and Number.isInteger(var) se true false aata h...
+                c = c.toFixed(4);
+            }
+            cel.value = c;
+        })
+    </script>
+</body>
+</html>

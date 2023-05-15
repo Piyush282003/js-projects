@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamborghini</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .sky{
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            background-image: url(background.jpg);
+            background-repeat: no-repeat;
+        }
+        .trees{
+            width: 100%;
+            height: 100vh;
+            background-image: url(trees.png);
+            background-size: cover;
+            position: absolute;
+            top: -150px;
+        }
+        .track{
+            height: 60vh;
+            width: 800vw;
+            background-image: url(track.png);
+            background-repeat: repeat-x;
+            position: absolute;
+            top: 70vh;
+            animation: carmove linear 10s infinite;
+
+
+        }
+        .car{
+            width: 400px;
+            height: 100px;
+            background-image: url(car_body.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 444px;
+            bottom: 244px;
+            animation: shake linear 2s infinite;
+        }
+        .wheel1 img{
+            width: 76px;
+            position: relative;
+            top: 45px;
+            left: 48px;
+            animation: wheelrotation linear .2s infinite;
+        }
+        .wheel2 img{
+            width: 75px;
+            position: relative;
+            top: -35px;
+            left: 249px;
+            animation: wheelrotation linear .2s infinite;
+        }
+
+        @keyframes wheelrotation {
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes carmove {
+            100%{
+                transform: translateX(-500vw);
+            }
+        }
+        @keyframes shake {
+            0%{
+                transform: translateY(-1px);
+            }
+            50%{
+                transform: translateY(1px);
+            }
+            100%{
+                transform: translateY(-1px);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sky">
+            <div class="trees"></div>
+            <div class="track"></div>
+            <div class="car">
+                <div class="wheel wheel1">
+                    <img src="car_wheel_left.png" alt="">
+                </div>
+                <div class="wheel wheel2">
+                    <img src="car_wheel_right.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var audio = document.createElement('audio');
+        audio.setAttribute('src',sound.mp3);
+        audio.loop=true;
+        audio.play();
+    </script>
+</body>
+</html>

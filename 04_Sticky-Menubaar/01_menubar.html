@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #header{
+            text-align: center;
+        }
+        #header img{
+            width: 280px;
+            height: auto;
+            margin-top: -44px;
+        }
+
+        #menu-bar{
+            background-color: cadetblue;
+            display: flex;
+            justify-content: center;
+        }
+        #menu-bar li{
+            padding: 15px 10px;
+            margin: auto 20px;
+            color: wheat;
+            list-style: none;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        #container{
+            text-align: center;
+            padding: 10px 100px;
+        }
+        
+        #container img{
+            width: 100%;
+        }
+        p{
+            text-align: justify;
+            font-size: 20px;
+            line-height: 1.5rem;
+        }
+
+        .sticky{
+            position: sticky;
+            top: 0%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img src="lays_logo.jpg" alt="">
+    </div>
+    <div id="menu-bar" class="sticky">
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Our Team</li>
+        <li>Client</li>
+        <li>Contact Us</li>
+    </div>
+    <div id="container">
+        <img src="abt.jpg" alt="">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis culpa dolore quisquam aperiam assumenda molestiae, quaerat vero esse in ipsum iure, laboriosam dolorum rerum tenetur doloribus qui consequatur fugit pariatur quis officia labore doloremque, at recusandae! Earum eos maxime quisquam rerum error aperiam consequuntur voluptates, nostrum ad inventore assumenda corporis, iste doloribus. Natus provident, dolorem aliquid, mollitia quia quibusdam consectetur eligendi cupiditate beatae fugit, possimus fuga sunt obcaecati quam officia voluptas accusamus dicta vitae in. Culpa illum porro maiores sunt eaque! Laborum laudantium architecto illo eveniet ab quos aperiam quibusdam blanditiis dignissimos quia porro, aliquam libero natus accusamus assumenda possimus. Quibusdam fugiat quam id amet debitis quaerat ex, eveniet temporibus magni dolorum nobis cupiditate laborum est. Ipsam, esse! Quod labore sed assumenda at officia culpa doloremque. Fugiat corporis sint eaque sit eius ipsam dicta impedit, ea deleniti accusamus et consequatur autem provident sunt reprehenderit. Ducimus accusantium saepe consectetur nam consequatur, qui ipsa, perferendis ex nulla accusamus odio non! Ad voluptates earum sequi quibusdam. Vitae laborum illum porro aliquid inventore voluptatem perferendis aspernatur voluptate? Nobis, sunt. Quibusdam, debitis minus. Temporibus eaque repellendus, cupiditate distinctio dolores quae expedita repellat labore dolorum nobis eveniet iure facere odit ipsa corrupti odio vel voluptatum molestias beatae modi impedit? Quod officia ratione at eaque laudantium accusamus asperiores ducimus nisi iste, voluptatibus, autem excepturi tempore veniam odio quisquam deleniti facere. Laborum architecto natus, eligendi alias modi ratione odio, asperiores nobis repellendus ad veritatis rerum soluta reiciendis! Labore iste obcaecati laudantium a, corporis dolores dignissimos voluptatibus minus ipsum quibusdam cumque voluptates odit provident voluptatum ab maiores quaerat expedita cupiditate! Impedit sed itaque dolore blanditiis molestias consequuntur hic totam, soluta doloremque porro voluptate voluptatum aliquid optio. Quos nisi ullam mollitia repudiandae sint error, possimus adipisci voluptate fugit quo numquam debitis beatae earum? Quo, voluptate quisquam? Atque officiis explicabo odio aliquam aut a impedit, tempora modi sapiente voluptatum asperiores! Expedita nemo omnis sint sapiente at, illum quae, saepe molestiae nisi veniam placeat mollitia ipsam natus perferendis possimus non, alias rerum explicabo maiores aperiam ipsa doloremque neque magni iusto! Ipsam, nisi ex porro voluptate consequuntur explicabo iure voluptatum earum inventore nobis ad expedita. Suscipit, repudiandae cumque consectetur praesentium reiciendis provident vitae culpa ullam! Minima voluptates quae veniam blanditiis maiores, animi atque pariatur reiciendis labore architecto ab quo voluptatum quibusdam! Quia minima quo porro, delectus harum quisquam quos consequatur cumque accusamus dolorum eos fuga magni quibusdam necessitatibus. Voluptate vero amet cupiditate. Voluptatibus quia vel repellat rem voluptas veritatis, possimus soluta quisquam neque expedita impedit animi ipsam. Voluptatem vel a eius. Dolorem, omnis aperiam. Veritatis, totam sequi. Est animi sit impedit ea voluptas optio tempore sunt ducimus, laborum ipsum. Aspernatur deserunt quasi facere animi porro mollitia delectus suscipit reprehenderit? Earum nostrum officiis quaerat ab rem error repellat labore atque incidunt voluptatibus recusandae ipsam perferendis saepe odit quae, possimus quo iste cum, aliquid architecto voluptatem accusamus distinctio nobis minus. Et necessitatibus consequatur facere magnam mollitia maxime. Nobis, corporis modi nihil, voluptate sequi ad fugiat aliquam, vitae minima similique quas. Dolor ut dignissimos officiis illo?
+        </p>
+    </div>
+
+    <script>
+        window.addEventListener("scroll",function(){
+            let navbar = document.getElementById('menu-bar');
+
+            if(window.pageYOffset >=240){
+                navbar.classList.add('sticky') 
+            }
+            else{
+                navbar.classList.remove('sticky')
+            }
+        })
+    </script>
+</body>
+</html>

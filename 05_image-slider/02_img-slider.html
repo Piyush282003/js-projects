@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        .slide-container{
+            position: relative;
+        }
+        img {
+            width:  1536px;
+            height: 700px;
+        }
+        .arrow{
+            position: absolute;
+            top: 35%;
+            cursor: pointer;
+            color: black;
+            padding: 8px 20px;
+            /*background: transparent;*/
+            background-color: antiquewhite;
+            font-size: 50px;
+        }
+        .next{
+            right: 0px;
+        }
+
+        .caption{
+            color: rgb(255, 255, 255);
+            font-size:60px;
+            font-weight: bold;
+            position: absolute;
+            bottom: 3px;
+            width: 100%;                                   /*yeh na krte toh inline jese hi show hota...*/
+            height: 10%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 4px;
+        }
+        .slide{
+            display: none;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide">
+            <img src="img1.jpg" alt="">
+            <div class="caption">Caption Text 1</div>
+        </div>
+        <div class="slide">
+            <img src="img2.jfif" alt="">
+            <div class="caption">Caption Text 2</div>
+        </div>
+        <div class="slide">
+            <img src="img3.jpg" alt="">
+            <div class="caption">Caption Text 3</div>
+        </div>
+        <div class="slide">
+            <img src="img4.jfif" alt="">
+            <div class="caption">Caption Text 4</div>
+        </div>
+        <span class="arrow prev" onclick="controller(-1)">&#10094;</span>
+        <span class="arrow next" onclick="controller(+1)">&#10095;</span>
+    </div>
+
+    <script>
+        let flag = 0;
+
+        function controller(x){
+            flag = flag+x;
+            slideshow(flag);
+
+        }
+
+        function slideshow(num){
+            let slides = document.getElementsByClassName("slide");
+            //console.log(slides);                               -->flag = 0 isliye liya coz slides arrays me store krlega imags ko toh img 1 jo h vo 0 index pr hai...
+            
+            if(num==slides.length){
+                flag=0;
+                num=0;
+            }
+            if(num < 0){
+                flag = slides.length-1;
+                num = slides.length-1;
+            }
+            for(let y of slides){
+                y.style.display = "none";
+            }
+            
+            slides[num].style.display = "block";
+        }
+        slideshow(flag);
+
+    </script>
+</body>
+</html>

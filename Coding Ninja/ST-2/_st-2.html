@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Ninja</title>
+</head>
+<body>
+    <h1>Adding and updation in List of Elements</h1>
+    <input type="text" id="inp">
+    <button id="add" class="btn" onclick="elem()">Add</button>
+    <button id="display" class="btn" onclick="play()">Display</button>
+    <button id="update" class="btn" onclick="upd()">Update</button>
+    <!-- <p id="para"></p> -->
+
+    <script>
+        let ad = document.getElementById("add");
+        let daalo = document.querySelector("input");
+        //let daalo = document.getElementById("inp");
+
+        let i=0;
+        let arr=[];                                                  //array cpp me arr[] aise hota hai but isme arr=[] hota hai...
+        function elem(){
+            let d = daalo.value;
+            arr.push(d);
+            alert("Element "+arr[i]+" added at index "+i);
+            i++;
+        }
+
+        //let ply = document.getElementById("para");
+        function play(){
+            //for(let i=0;i<arr.length;i++){
+            for(let i in arr){
+                //ply.innerHTML += `Element ${i} = ${arr[i]} <br>`;
+                document.body.innerHTML += `<br>Element ${i} = ${arr[i]}`;
+            }
+        }
+
+        function upd(){
+            let addelem = prompt("Enter element to update:")
+            let indx = prompt("Update at index:")
+            //console.log(indx);                              --> indx ko indx.value krke store nhi krna hota sidha indx krke bhi hojata hai..
+
+            if(indx>arr.length-1){
+                //arr.length-1 isliye ki vo 0 se strt hota hai...
+                let cnfrm = confirm("Want to add there:");
+                if(cnfrm){
+                    arr.push(addelem);
+                }
+                else{
+                    alert("Inavlid index value.")
+                }
+            }
+            else{
+                arr[indx] = addelem;
+            }
+        }
+    </script>
+</body>
+</html>

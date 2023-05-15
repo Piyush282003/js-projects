@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #3498db;
+            display: flex;                               /*isse vo utni hi jgh lega jitni uski width hogi...*/
+            justify-content: center;
+            align-items: center;
+            height: 100vh;                             /*flex se utni hi height lega jitni uski hogi toh height 100vh krdi...*/
+        }
+        #form-container{
+            background-color: white;
+            padding: 50px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        h2{
+            margin: 0px 0px 10px 0px;
+        }
+        input{
+            width: 200px;
+            margin: 10px 0px;
+            padding: 10px;
+        }
+        input[type="submit"]{
+            width: 222px;
+            background-color: #3498db;
+            border: 0px;
+            color: white;
+            cursor: pointer;
+        }
+        .error{
+            color: red;
+            margin: 0px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <h2>Login</h2>
+        <form action="" onsubmit="return validationform()">
+            <input type="text" id="username" placeholder="User Name"><br>
+            <p class="error" id="usererror"></p>
+            <input type="password" id="password" placeholder="Password"><br>
+            <p class="error" id="passerror"></p>
+            <input type="Submit">
+        </form>
+    </div>
+
+    <script>
+        let username = document.getElementById("username")
+        let password = document.getElementById("password")
+
+        function validationform(){
+            //return true;
+            if(username.value == ""){
+                document.getElementById("usererror").innerHTML = "User name is empty...";
+            }
+            else if(username.value.length<3){
+                document.getElementById("usererror").innerHTML = "User name requires min 3 char...";
+            }
+            else{
+                document.getElementById("usererror").innerHTML = "";              //isse vo agr teen digits daal diye toh vo error hat jayega...
+            }
+            //neeche agr else if hota toh choice hoti ki teeno me se koi ek chle pr ab use bhi chlna pdega...
+
+            if(password.value == ""){
+                document.getElementById("passerror").innerHTML = "Password is empty...";
+            }
+            else{
+                document.getElementById("passerror").innerHTML = "";
+            }
+
+            return false;                                            //false nhi hoga toh vo ek sec ke liye ayega bas...
+
+            //or submit krana h return true krna hoga toh uska bhi treeka hai...02 me:
+
+        }
+    </script>
+</body>
+</html>

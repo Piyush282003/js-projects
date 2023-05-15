@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 10px 20px;
+        }
+        #list1{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list"></ul>
+    <div class="container" id="container">
+        <div id="replace">A. I am a Engineer</div>
+        <ul id="list1"></ul>
+        <div id="web">K. This is Web Technology</div>
+        <div id="cgpa">6. I got 10 CGPA</div>
+    </div>
+    <br>
+    <div class="buttons">
+        <button id="repbtn">Replace</button>
+        <button id="appendbtn">Append</button>
+        <button id="insertbefbtn">Insert Before</button>
+        <button id="removebtn">Remove</button>
+    </div>
+
+    <script>
+        var replace = document.getElementById('repbtn');
+        var replacetxt = document.getElementById('replace');
+        replace.onclick = ()=>{
+            replacetxt.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am a BE Student"
+        }
+
+        var prepend = document.getElementById('appendbtn');
+        prepend.onclick = ()=>{
+            document.getElementById('list').innerHTML += "<li>Advance Web Technology</li>";
+            document.getElementById('list').style.marginLeft = "-45px";
+            document.getElementById('list').style.marginBottom = "0px";
+        }
+        
+        var append = document.getElementById('insertbefbtn');
+        append.onclick = ()=>{
+            document.getElementById('list1').innerHTML += "<li>Discrete structure</li>";
+            document.getElementById('list1').style.display = "block";
+            document.getElementById('list1').style.marginLeft = "-45px";
+            document.getElementById('list1').style.marginTop = "0px";
+            document.getElementById('list1').style.marginBottom = "0px";
+
+        }
+        var remove = document.getElementById('removebtn');
+        remove.onclick = ()=>{
+            document.getElementById('list1').remove();
+        }
+    </script>
+</body>
+</html>
